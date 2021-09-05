@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(filesorter)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_definitions(-DNUM_TO_SORT_IN_RAM=1000)
+
+set(SOURCES run_filesort.cpp)
+set(TU_SOURCES testutil.cpp)
+
+include_directories(lib testlib)
+
+add_executable(filesort ${SOURCES})
+add_executable(testutil ${TU_SOURCES})
+
+add_subdirectory(lib)
+add_subdirectory(testlib)
+
+target_link_libraries(filesort filesort_lib)
+target_link_libraries(testutil testlib)

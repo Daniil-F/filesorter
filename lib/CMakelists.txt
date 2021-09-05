@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(file_sorter_lib)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(SOURCES filesort.cpp tmpmgr.cpp)
+
+add_library(filesort_lib STATIC ${SOURCES})
