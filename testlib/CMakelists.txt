@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.14)
+
+project(testlib)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(SOURCES testlib.cpp)
+
+add_library(testlib STATIC ${SOURCES})
